@@ -1,10 +1,15 @@
 .countriesAPI_displayed {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 2.5em;
     margin: 1em 0;
     border-top: 1px solid $clr;
+
+    .countriesAPI_displayed--list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 2.5em;
+        list-style: none;
+        padding: 0;
+    }
 
     &--warning {
         color: $clr;
