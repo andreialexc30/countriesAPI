@@ -22,17 +22,7 @@ export default {
 
                 return response.json();
             }).then((countryData) => {
-                for(let i = 0; i < countryData.length; i++) {
-                    let country = {
-                        flag: countryData[i].flags.png,
-                        name: countryData[i].name.common,
-                        capital: countryData[i].capital,
-                        region: countryData[i].region,
-                        pop: countryData[i].population
-                    }
-
-                    this.allCountries.push(country)
-                }
+               this.populateArray(countryData)
             })
     },
     computed: {
@@ -55,11 +45,23 @@ export default {
         filterRegion() {
             const region = document.getElementById('countryRegion')
             const regionOption = region.options[region.selectedIndex].value
+            const sortedCountries = new Array();
+
+            if(sortedCountries.length === 0) {
+                this.allCountries.forEach((country) => {
+                    if(country.region === regionOption) {
+                        sortedCountries.push(country)
+                    }
+                })
+            }
+
+            this.allCountries.splice(0, this.allCountries.length, ...sortedCountries)
+            console.log(sortedCountries)
+            console.log(this.allCountries)
         },
         fetchData() {
             const searchInput = document.querySelector('.countriesAPI_form--search')
             let validInput = searchInput.value
-
             if(validInput.length === 0) {
                 this.valid = !this.valid
                 return
@@ -68,7 +70,6 @@ export default {
 
             const getSelection = document.getElementById('filterSearch')
             let selectedOption = getSelection.options[getSelection.selectedIndex].text.toLowerCase();
-
             this.allCountries = new Array();
             if(validInput && selectedOption !== 'code') {
                 fetch(`https://restcountries.com/v3.1/${selectedOption}/${endpoint}`)
@@ -80,17 +81,7 @@ export default {
 
                         return response.json();
                     }).then((filteredData) => {
-                        for(let i = 0; i < filteredData.length; i++) {
-                            let country = {
-                                flag: filteredData[i].flags.png,
-                                name: filteredData[i].name.common,
-                                capital: filteredData[i].capital,
-                                region: filteredData[i].region,
-                                pop: filteredData[i].population
-                            }
-
-                            this.allCountries.push(country)
-                        }
+                        this.populateArray(filteredData)
                     })
             }
 
@@ -103,18 +94,8 @@ export default {
                     }
 
                     return response.json();
-                }).then((filteredData) => {
-                    for(let i = 0; i < filteredData.length; i++) {
-                        let country = {
-                            flag: filteredData[i].flags.png,
-                            name: filteredData[i].name.common,
-                            capital: filteredData[i].capital,
-                            region: filteredData[i].region,
-                            pop: filteredData[i].population
-                        }
-
-                        this.allCountries.push(country)
-                    }
+                }).then((codeData) => {
+                    this.populateArray(codeData)
                 })
             }
         },
@@ -145,6 +126,19 @@ export default {
                         }
                     })
                 })
+        },
+        populateArray(array) {
+            for(let i = 0; i < array.length; i++) {
+                let country = {
+                    flag: array[i].flags.png,
+                    name: array[i].name.common,
+                    capital: array[i].capital,
+                    region: array[i].region,
+                    pop: array[i].population
+                }
+
+                this.allCountries.push(country)
+            }
         }
     }
 }
