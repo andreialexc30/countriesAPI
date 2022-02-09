@@ -3,7 +3,7 @@
             <h2 class="countriesAPI_Country--name">{{ country.name }}</h2>
             <div @click="showModal" class="countriesAPI_Country--wrapper">
                 <div class="countriesAPI_Country--flag">
-                    <img :src="country.flag" alt="Romania" class="countriesAPI_Country--flag-img">
+                    <img :src="country.flag" alt="" class="countriesAPI_Country--flag-img">
                 </div>
                 <h3 class="countriesAPI_Country--capital" v-for="capital in country.capital">{{ capital }}</h3>
                 <ul class="countriesAPI_Country--details">
