@@ -1,5 +1,5 @@
 <template>
-        <article v-for="country in sortedArray" :key="country.code" class="countriesAPI_displayed--Country">
+        <li v-for="country in sortedArray" :key="country.code" class="countriesAPI_displayed--Country">
             <h2 class="countriesAPI_Country--name">{{ country.name }}</h2>
             <div @click="showModal" class="countriesAPI_Country--wrapper">
                 <div class="countriesAPI_Country--flag">
@@ -11,7 +11,7 @@
                     <li class="countriesAPI_Country--details-item">Population: <span class="countriesAPI_details--population">{{ country.pop }}</span></li>
                 </ul>
             </div>
-        </article>
+        </li>
         <CountryModal :showModal="showModal"
         :sortedArray="sortedArray"
         :modalCountry="modalCountry"
