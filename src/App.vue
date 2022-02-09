@@ -1,30 +1,20 @@
 <template>
-  <div id="nav">
+<Header :fetchData="fetchData"
+:valid="valid" />
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </div>
+  </div> -->
   <router-view/>
+  <section class="countriesAPI_filters">
+    <Filters :filterRegion="filterRegion" />
+  </section>
+  <section class="countriesAPI_displayed">
+    <h1 v-if="ifCountry" class="countriesAPI_displayed--warning">Could not find the country you were looking for. Please try again.</h1>
+    <CountryCard :modalData="modalData"
+    :modalCountry="modalCountry"
+    :sortedArray="sortedArray" />
+  </section>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script src="./js/app.js"></script>

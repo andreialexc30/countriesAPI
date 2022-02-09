@@ -1,0 +1,61 @@
+.countriesAPI_displayed {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 2.5em;
+    margin: 1em 0;
+    border-top: 1px solid $clr;
+
+    &--warning {
+        color: $clr;
+        margin: .5em 0;
+        width: 100vw;
+    }
+
+    &--Country {
+        padding-top: 1.5em;
+
+        .countriesAPI_Country--name {
+            color: $cardClr;
+            margin-left: .2em;
+        }
+
+        .countriesAPI_Country--wrapper {
+            margin-top: 2em;
+            width: 100%;
+            height: auto;
+            min-height: 350px;
+            background-color: $cardClr;
+            text-align: center;
+            color: $fontClr;
+            transition: all 185ms ease-in-out;
+            box-shadow: 1px 5px 5px #5b5858;
+            border-radius: 2.5px;
+            cursor: pointer;
+
+            .countriesAPI_Country--flag {
+                width: inherit;
+                height: auto;
+                border-radius: inherit;
+
+                &-img {
+                    max-height: 200px;
+                    min-height: 200px;
+                    width: inherit;
+                    height: inherit;
+                    border-radius: inherit;
+                }
+            }
+
+            .countriesAPI_Country--capital {
+                margin-top: 1em;
+            }
+
+            .countriesAPI_Country--details {
+                list-style: none;
+                padding:0 0 1em 0;
+                margin: 0;
+            }
+        }
+    }
+}

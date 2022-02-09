@@ -1,0 +1,27 @@
+.countriesAPI_header--title {
+    color: $clr;
+}
+
+.countriesAPI_form--search {
+    width: 25vw;
+    padding: .5em;
+    border: none;
+}
+
+.countriesAPI_form--btn {
+    border: none;
+    background-color: $clr;
+    color: $fontClr;
+    letter-spacing: .25px;
+    cursor: pointer;
+    padding: .5em;
+}
+
+.countriesAPI_form--filter {
+    margin-left: .2em;
+    padding: .5em;
+    background: $clr;
+    color: $fontClr;
+    letter-spacing: .25px;
+    border: none;
+}

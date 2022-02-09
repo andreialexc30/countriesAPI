@@ -1,0 +1,40 @@
+.countriesAPI_Country--modal {
+    margin-top: 1em;
+    position: fixed;
+    background-color: $cardClr;
+    width: 95vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $fontClr;
+
+    &-flag {
+        height: auto;
+
+        .countriesAPI_Country--modal-img {
+            height: 25vh;
+        }
+    }
+
+    .countriesAPI_Country--otherDetails {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        width: 75%;
+    }
+
+    &-close {
+        position: absolute;
+        right: .5em;
+        top: .5em;
+        padding: 1em;
+        border: none;
+        background: none;
+        font-size: 2rem;
+        color: $fontClr;
+        cursor: pointer;
+    }
+}

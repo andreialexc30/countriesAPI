@@ -1,0 +1,33 @@
+$bgClr:hsl(22, 41%, 88%);
+$cardClr:hsl(6, 57%, 49%);
+$fontClr:hsl(0, 0%, 95%);
+$clr: hsl(184, 66%, 28%);
+$clrLight: hsl(184, 66%, 34%);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $bgClr;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    margin: 1.5em;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+}
