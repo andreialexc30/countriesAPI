@@ -23,6 +23,8 @@ export default {
                 return response.json();
             }).then((countryData) => {
                this.populateArray(countryData)
+            }).catch((error) => {
+                console.error('Error:', error)
             })
     },
     computed: {
@@ -56,8 +58,6 @@ export default {
             }
 
             this.allCountries.splice(0, this.allCountries.length, ...sortedCountries)
-            console.log(sortedCountries)
-            console.log(this.allCountries)
         },
         fetchData() {
             const searchInput = document.querySelector('.countriesAPI_form--search')
@@ -82,6 +82,8 @@ export default {
                         return response.json();
                     }).then((filteredData) => {
                         this.populateArray(filteredData)
+                    }).catch((error) => {
+                        console.error('Error:', error)
                     })
             }
 
@@ -96,6 +98,8 @@ export default {
                     return response.json();
                 }).then((codeData) => {
                     this.populateArray(codeData)
+                }).catch((error) => {
+                    console.error('Error:', error)
                 })
             }
         },
@@ -125,6 +129,8 @@ export default {
                             languages: country.languages
                         }
                     })
+                }).catch((error) => {
+                    console.error('Error:', error)
                 })
         },
         populateArray(array) {
