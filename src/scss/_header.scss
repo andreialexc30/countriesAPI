@@ -1,5 +1,11 @@
 .countriesAPI_header--title {
     color: $clr;
+    margin-bottom: .5em;
+
+    .credits {
+        font-size: 1rem;
+        color: $cardClr;
+    }
 }
 
 .countriesAPI_form--search {
