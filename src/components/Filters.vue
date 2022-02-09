@@ -1,12 +1,12 @@
 <template>
-    <select @click.prevent="filterRegion" name="Region" id="countryRegion" class="countriesAPI_filter">
+    <select name="Region" id="countryRegion" class="countriesAPI_filter">
         <option>Region</option>
-        <option value="Africa">Africa</option>
-        <option value="Americas">North America</option>
-        <option value="Americas">South America</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
+        <option @click="filterRegion" value="Africa">Africa</option>
+        <option @click="filterRegion" value="Americas">North America</option>
+        <option @click="filterRegion" value="Americas">South America</option>
+        <option @click="filterRegion" value="Asia">Asia</option>
+        <option @click="filterRegion" value="Europe">Europe</option>
+        <option @click="filterRegion" value="Oceania">Oceania</option>
     </select>
     <select name="Pop. range" id="countryPop" class="countriesAPI_filter">
         <option>Population</option>
